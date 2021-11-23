@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">F21_FragmentDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello fragment two</string>
+</resources>
