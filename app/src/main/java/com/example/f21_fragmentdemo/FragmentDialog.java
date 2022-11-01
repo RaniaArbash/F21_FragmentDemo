@@ -32,15 +32,10 @@ public class FragmentDialog extends DialogFragment {
     private String mParam1;
     private int mParam2;
 
-    public FragmentDialog() {
-        // Required empty public constructor
-    }
-
     public static FragmentDialog newInstance(String param1) {
         FragmentDialog fragment = new FragmentDialog();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
-       // args.putInt(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,17 +47,6 @@ public class FragmentDialog extends DialogFragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
     }
-
-//    @NonNull
-//    @Override
-//    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-//        return new AlertDialog.Builder(requireContext())
-//                .setMessage("Hello this is the defult dialgo")
-//                .setPositiveButton("OK", (dialog, which) -> {} ).setNegativeButton("Cancel",null)
-//                .create();
-//    }
-////
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -70,9 +54,7 @@ public class FragmentDialog extends DialogFragment {
         View v = inflater.inflate(R.layout.fragment_dialog, container, false);
         TextView textView = v.findViewById(R.id.text_in_dialog);
         textView.setText(mParam1);
-
         EditText citytext = v.findViewById(R.id.city_text);
-
         Button yes = v.findViewById(R.id.yesid);
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,12 +72,6 @@ public class FragmentDialog extends DialogFragment {
                 dismiss();
             }
         });
-
-
-
         return v;
-
-
-
     }
 }
